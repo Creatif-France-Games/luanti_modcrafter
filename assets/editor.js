@@ -305,12 +305,7 @@ function displaySetup()
 	tmp += "où vous installez les mods</a>.</li>";
 	tmp += "<li>Créez un dossier nommé '" + project.name + "'. Ce sera le dossier de votre mod.</li>";
 	tmp += "<li>Dans ce dossier, créez un dossier nommé 'textures'.</li>";
-	tmp += "<li>Ouvrez un éditeur de texte. Il doit s'agir d'un éditeur de texte brut. ";
-	tmp += "<li>Sous Windows, Bloc-Notes sera suffisant. ";
-	tmp += "Vous <b>ne pouvez pas</b> utiliser Word, OpenOffice, LibreOffice ou tout autre suite bureatique</li>";
-	tmp += "<li>Copiez-collez le code en bas de cette page dans l'éditeur, ";
-	tmp += "et enregistrez-le sous 'init.lua' dans le dossier du mod. (ne gardez pas l'extension .txt !)</li>";
-	tmp += "<li>Quand vous avez fini, cliquez sur suivant pour apprendre à ajouter des textures à vos nodes.</li>";
+tmp += "<li>Déplacez le init.lua a télécharger ci dessous dans le dossier du mod (pas le textures, le dossier racine).</li>";
 	tmp += "</ul>";
 
 	tmp += "<p style=\"margin:0;\"><textarea id=\"code_output\">";
@@ -319,7 +314,7 @@ function displaySetup()
 
 	tmp += "<p id=\"buttons\" style=\"margin-top:0;\"><a class=\"button long_button\" id=\"btn_home\">Retour</a> ";
 	tmp += "<a class=\"button long_button\" id=\"btn_next\">Suivant</a></p>";
-
+tmp += "<a class=\"button long_button\" id=\"btn_download\">Télécharger init.lua</a> ";
 	$("#page").html(tmp);
 	$("#btn_home").click(function() {
 		displayMain();
