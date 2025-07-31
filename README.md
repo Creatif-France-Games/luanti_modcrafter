@@ -1,3 +1,12 @@
+Luanti ModCrafter
+========================
+Luanti ModCrafter est basé sur Simple Minetest Mod Maker de Rubenwardy.
+Ce projet modifie :
+[pas encore de modification]
+
+
+README original :
+
 Simple Minetest Mod Maker
 =========================
 
