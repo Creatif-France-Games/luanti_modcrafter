@@ -1,29 +1,29 @@
 if(window.FileReader) { 
 	var drop; 
 	addEventHandler(window, 'load', function() {
-		var drop   = window;
-		//var list   = document.getElementById('list');
+		var drop = window;
+		//var list = document.getElementById('list');
 
 		function cancel(e) {
 			if (e.preventDefault) { e.preventDefault(); }
 			return false;
 		}
 
-		// Tells the browser that we *can* drop on this target
+		// Indique au navigateur que l'on peut déposer (drag & drop) sur cette cible
 		addEventHandler(drop, 'dragover', cancel);
 		addEventHandler(drop, 'dragenter', cancel);
 
 		addEventHandler(drop, 'drop', function (e) {
-			e = e || window.event; // get window.event if e argument missing (in IE)   
-			if (e.preventDefault) { e.preventDefault(); } // stops the browser from redirecting off to the image.
+			e = e || window.event; // récupère window.event si e est manquant (IE)   
+			if (e.preventDefault) { e.preventDefault(); } // empêche le navigateur de rediriger vers l'image.
 
-			var dt    = e.dataTransfer;
+			var dt = e.dataTransfer;
 			var files = dt.files;
-			for (var i=0; i<files.length; i++) {
+			for (var i = 0; i < files.length; i++) {
 				var file = files[i];
 				var reader = new FileReader();
 
-				//attach event handlers here...
+				// attacher les gestionnaires d'événements ici...
 
 				reader.readAsDataURL(file);
 				addEventHandler(reader, 'loadend', function(e, file) {
@@ -32,32 +32,34 @@ if(window.FileReader) {
 						var text = atob(bin.substr(bin.indexOf(",") + 1, bin.length - bin.indexOf(",") - 1));
 						var data = jQuery.parseJSON(text);
 						if (!data || !data.name || data.name == "") {
-							alert("File is not of correct type, or is corrupted!");
+							alert("Le fichier n'est pas du bon type ou est corrompu !");
 							return false;
 						}
 
 						project = data;
 						displayMain();
 					} catch(e) {						
-						alert("File is not of correct type, or is corrupted!");
+						alert("Le fichier n'est pas du bon type ou est corrompu !");
 						return false;
 					}
 				}.bindToEventHandler(file));
 			}
 			return false;
 		});
+		
 		Function.prototype.bindToEventHandler = function bindToEventHandler() {
 			var handler = this;
 			var boundParameters = Array.prototype.slice.call(arguments);
-			//create closure
+			// création d'une closure
 			return function(e) {
-				e = e || window.event; // get window.event if e argument missing (in IE)   
+				e = e || window.event; // récupère window.event si e est manquant (IE)   
 				boundParameters.unshift(e);
 				handler.apply(this, boundParameters);
 			}
 		};
 	});
 }
+
 function addEventHandler(obj, evt, handler) {
 	if(obj.addEventListener) {
 		// W3C method
