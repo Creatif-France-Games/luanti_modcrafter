@@ -43,19 +43,42 @@
 		</div>
 	</div>
 	<div id="footer">
-  Créé par rubenwardy - Traduit et thème changé par Lulu-76450
-  <a href="https://github.com/creatif-france-games/luanti-modcrafter" target="_blank" class="button">GitHub</a>
-  <button id="legal-btn">Mentions légales</button>
-  <a href="https://creatif-france-games.github.io/politique.html" target="_blank" class="button">Politique de confidentialité</a>
-</div>
-<div id="legal-modal" class="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); color:#eee; overflow-y:auto; z-index:9999;">
-  <div style="background:#222; max-width:500px; margin:6% auto; padding:25px 30px; border-radius:8px; box-shadow:0 0 15px #007bff; position:relative;">
-    <span id="close-legal" style="position:absolute; top:12px; right:18px; font-size:28px; font-weight:bold; cursor:pointer; color:#00e1ff;">&times;</span>
-    <h2 style="margin-top:0; color:#00e1ff;">Mentions légales</h2>
-    <p><strong>Éditeur :</strong><br>CF GAMES (pseudo)<br>Email : creatif.france@outlook.com</p>
-    <p><strong>Hébergeur :</strong><br>GitHub, Inc.<br>88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</p>
-    <p><a href="https://github.com" target="_blank" style="color:#00e1ff;">github.com</a></p>
-    <p><strong>GitHub :</strong><br><a href="https://github.com/Team-CF-Games/cf-site" target="_blank" style="color:#00e1ff;">cf-site</a></p>
-    <p><strong>Responsabilité :</strong><br>L’éditeur fait au mieux, mais pas responsable des erreurs ou oublis.</p>
+		Créé par rubenwardy - Traduit et thème changé par Lulu-76450
+		<a href="https://github.com/creatif-france-games/luanti-modcrafter" target="_blank" class="button">GitHub</a>
+		<button id="legal-btn">Mentions légales</button>
+		<a href="https://creatif-france-games.github.io/politique.html" target="_blank" class="button">Politique de confidentialité</a>
+	</div>
+
+	<div id="legal-modal" class="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); color:#eee; overflow-y:auto; z-index:9999;">
+	  <div style="background:#222; max-width:500px; margin:6% auto; padding:25px 30px; border-radius:8px; box-shadow:0 0 15px #007bff; position:relative;">
+	    <span id="close-legal" style="position:absolute; top:12px; right:18px; font-size:28px; font-weight:bold; cursor:pointer; color:#00e1ff;">&times;</span>
+	    <h2 style="margin-top:0; color:#00e1ff;">Mentions légales</h2>
+	    <p><strong>Éditeur :</strong><br>CF GAMES (pseudo)<br>Email : creatif.france@outlook.com</p>
+	    <p><strong>Hébergeur :</strong><br>GitHub, Inc.<br>88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</p>
+	    <p><a href="https://github.com" target="_blank" style="color:#00e1ff;">github.com</a></p>
+	    <p><strong>GitHub :</strong><br><a href="https://github.com/Team-CF-Games/cf-site" target="_blank" style="color:#00e1ff;">cf-site</a></p>
+	    <p><strong>Responsabilité :</strong><br>L’éditeur fait au mieux, mais pas responsable des erreurs ou oublis.</p>
+	  </div>
+	</div>
+
+	<script>
+		// Ouvre la modale Mentions légales
+		document.getElementById('legal-btn').addEventListener('click', function() {
+			document.getElementById('legal-modal').style.display = 'block';
+		});
+
+		// Ferme la modale quand on clique sur la croix
+		document.getElementById('close-legal').addEventListener('click', function() {
+			document.getElementById('legal-modal').style.display = 'none';
+		});
+
+		// Ferme la modale si on clique en dehors du contenu
+		window.addEventListener('click', function(event) {
+			const modal = document.getElementById('legal-modal');
+			if (event.target === modal) {
+				modal.style.display = 'none';
+			}
+		});
+	</script>
 </body>
 </html>
