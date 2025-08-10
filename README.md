@@ -2,7 +2,7 @@ Luanti ModCrafter
 ========================
 Luanti ModCrafter est basé sur Simple Minetest Mod Maker de Rubenwardy.
 Ce projet modifie :
--Le thème est refait
+-Le thème est modifié : sombre & bleu
 -Traduction en francais
 
 
