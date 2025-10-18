@@ -5,6 +5,7 @@ Ce projet modifie :
 -Le thème est modifié : sombre & bleu
 -Traduction en francais
 
+[Essayez ici](https://creatif-france-games.github.io/luanti-modcrafter)
 
 README original :
 
